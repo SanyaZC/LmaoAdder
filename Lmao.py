@@ -14,7 +14,7 @@ class JacquesTwoMod(loader.Module):
 	"""Хуй кучизу"""
 	strings = {
 		'name': 'Хуй Кучизу',
-		'usage': 'ТАК СЛОЖНО НАПИСАТЬ <code>(Ты еблан).help Хуй Кучизу V2</code> , ДОЛБАЕБ?',
+		'usage': 'ТАК СЛОЖНО НАПИСАТЬ <code>.help Хуй Кучизу</code> , ДОЛБАЕБ?',
 	}
 	def __init__(self):
 		self.name = self.strings['name']
