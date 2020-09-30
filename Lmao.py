@@ -13,8 +13,8 @@ def register(cb):
 class JacquesTwoMod(loader.Module):
 	"""Хуй кучизу"""
 	strings = {
-		'name': 'Хуй Кучизу',
-		'usage': 'ТАК СЛОЖНО НАПИСАТЬ <code>.help Хуй Кучизу</code> , ДОЛБАЕБ?',
+		'name': 'Лолизатор',
+		'usage': 'ТАК СЛОЖНО НАПИСАТЬ <code>.help Лолизатор</code> , ДОЛБАЕБ?',
 	}
 	def __init__(self):
 		self.name = self.strings['name']
@@ -25,8 +25,8 @@ class JacquesTwoMod(loader.Module):
 		self._client = client
 		self.me = await client.get_me()
 		
-	async def kjcmd(self, message):
-		""".kj <реплай на сообщение/свой текст>\n@kuchizu :3"""
+	async def lzcmd(self, message):
+		""".lz <реплай на сообщение/свой текст>\nАвтор - @kuchizu :3"""
 		
 		ufr = requests.get("http://allfont.de/cache/fonts/lobster_0bb8e965b43150fe5f875de8f9692762.ttf")
 		f = ufr.content
@@ -41,8 +41,8 @@ class JacquesTwoMod(loader.Module):
 				txt = reply.raw_text
 		else:
 			txt = utils.get_args_raw(message)
-		await message.edit("<b>Кучизу далбаеб</b>")
-		pic = requests.get("https://i.ibb.co/yBdtc6v/image.jpg")
+		await message.edit("<b>Лолизируем...</b>")
+		pic = requests.get("https://i.ibb.co/ZgDhWCY/Lmao.png")
 		pic.raw.decode_content = True
 		img = Image.open(io.BytesIO(pic.content)).convert("RGB")
  
