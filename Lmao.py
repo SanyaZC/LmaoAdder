@@ -42,7 +42,7 @@ class JacquesTwoMod(loader.Module):
 		else:
 			txt = utils.get_args_raw(message)
 		await message.edit("<b>Лолизируем...</b>")
-		pic = requests.get("https://i.ibb.co/0DvPJzB/fuck.png")
+		pic = requests.get("https://i.ibb.co/Z6Lzw1j/shit.png")
 		pic.raw.decode_content = True
 		img = Image.open(io.BytesIO(pic.content)).convert("RGB")
  
