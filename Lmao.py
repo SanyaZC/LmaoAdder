@@ -48,7 +48,7 @@ class JacquesTwoMod(loader.Module):
  
 		W, H = img.size
 		#txt = txt.replace("\n", "𓃐")
-		text = "\n".join(wrap(txt, 20))
+		text = "\n".join(wrap(txt, 50))
 		t = text + "\n"
 		#t = t.replace("𓃐","\n")
 		draw = ImageDraw.Draw(img)
