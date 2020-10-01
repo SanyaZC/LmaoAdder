@@ -8,13 +8,13 @@ import io
 from textwrap import wrap
 
 def register(cb):
-	cb(JacquesTwoMod())
+	cb(JacquesemMod())
 	
-class JacquesTwoMod(loader.Module):
+class JacquesemMod(loader.Module):
 	"""Хуй кучизу"""
 	strings = {
-		'name': 'Лолизатор',
-		'usage': 'ТАК СЛОЖНО НАПИСАТЬ <code>.help Лолизатор</code> , ДОЛБАЕБ?',
+		'name': 'Эмомализатор',
+		'usage': 'ТАК СЛОЖНО НАПИСАТЬ <code>.help Емомали</code> , ДОЛБАЕБ?',
 	}
 	def __init__(self):
 		self.name = self.strings['name']
@@ -25,10 +25,10 @@ class JacquesTwoMod(loader.Module):
 		self._client = client
 		self.me = await client.get_me()
 		
-	async def lzcmd(self, message):
-		""".lz <реплай на сообщение/свой текст>\nАвтор - @kuchizu :3"""
+	async def emomalicmd(self, message):
+		""".Emomali <реплай на сообщение/свой текст>\nАвтор - @kuchizu :3"""
 		
-		ufr = requests.get("http://allfont.de/cache/fonts/lobster_0bb8e965b43150fe5f875de8f9692762.ttf")
+		ufr = requests.get("https://github.com/LaciaMemeFrame/FTG-Modules/blob/master/open-sans.ttf?raw=true")
 		f = ufr.content
 		
 		reply = await message.get_reply_message()
@@ -41,27 +41,27 @@ class JacquesTwoMod(loader.Module):
 				txt = reply.raw_text
 		else:
 			txt = utils.get_args_raw(message)
-		await message.edit("<b>Лолизируем...</b>")
-		pic = requests.get("https://i.ibb.co/Z6Lzw1j/shit.png")
+		await message.edit("<b>Я НЕ ХОЧУ В ТЮРЬМУ!!!</b>")
+		pic = requests.get("https://i.ibb.co/HhQSn6B/em.png")
 		pic.raw.decode_content = True
 		img = Image.open(io.BytesIO(pic.content)).convert("RGB")
  
 		W, H = img.size
 		#txt = txt.replace("\n", "𓃐")
-		text = "\n".join(wrap(txt, 20))
+		text = "\n".join(wrap(txt, 19))
 		t = text + "\n"
 		#t = t.replace("𓃐","\n")
 		draw = ImageDraw.Draw(img)
-		font = ImageFont.truetype(io.BytesIO(f), 35, encoding='UTF-8')
+		font = ImageFont.truetype(io.BytesIO(f), 32, encoding='UTF-8')
 		w, h = draw.multiline_textsize(t, font=font)
-		imtext = Image.new("RGBA", (w+50, h+50), (0, 0,0,0))
+		imtext = Image.new("RGBA", (w+10, h+10), (0, 0,0,0))
 		draw = ImageDraw.Draw(imtext)
-		draw.multiline_text((40, 40),t,(225,225,225),font=font, align='left')
-		imtext.thumbnail((450, 330))
-		w, h = 450, 330
-		img.paste(imtext, (2,100), imtext)
+		draw.multiline_text((10, 10),t,(0,0,0),font=font, align='left')
+		imtext.thumbnail((339, 181))
+		w, h = 339, 181
+		img.paste(imtext, (10,10), imtext)
 		out = io.BytesIO()
-		out.name = "@sad0ff.jpg"
+		out.name = "Emomali.jpg"
 		img.save(out)
 		out.seek(0)
 		await message.client.send_file(message.to_id, out, reply_to=reply)
