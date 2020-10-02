@@ -13,8 +13,8 @@ def register(cb):
 class JacquesemMod(loader.Module):
 	"""Хуй кучизу"""
 	strings = {
-		'name': 'Эмомализатор',
-		'usage': 'ТАК СЛОЖНО НАПИСАТЬ <code>.help Емомали</code> , ДОЛБАЕБ?',
+		'name': 'Лолизатор',
+		'usage': 'ТАК СЛОЖНО НАПИСАТЬ <code>.help Лолизатор</code> , ДОЛБАЕБ?',
 	}
 	def __init__(self):
 		self.name = self.strings['name']
@@ -25,8 +25,8 @@ class JacquesemMod(loader.Module):
 		self._client = client
 		self.me = await client.get_me()
 		
-	async def emomalicmd(self, message):
-		""".Emomali <реплай на сообщение/свой текст>\nАвтор - @kuchizu :3"""
+	async def lzcmd(self, message):
+		""".lz <реплай на сообщение/свой текст>\nАвтор - @kuchizu :3"""
 		
 		ufr = requests.get("https://github.com/LaciaMemeFrame/FTG-Modules/blob/master/open-sans.ttf?raw=true")
 		f = ufr.content
@@ -41,8 +41,8 @@ class JacquesemMod(loader.Module):
 				txt = reply.raw_text
 		else:
 			txt = utils.get_args_raw(message)
-		await message.edit("<b>Я НЕ ХОЧУ В ТЮРЬМУ!!!</b>")
-		pic = requests.get("https://i.ibb.co/HhQSn6B/em.png")
+		await message.edit("<b>Лолизируем...</b>")
+		pic = requests.get("https://i.ibb.co/Z6Lzw1j/shit.png")
 		pic.raw.decode_content = True
 		img = Image.open(io.BytesIO(pic.content)).convert("RGB")
  
@@ -61,7 +61,7 @@ class JacquesemMod(loader.Module):
 		w, h = 339, 181
 		img.paste(imtext, (10,10), imtext)
 		out = io.BytesIO()
-		out.name = "Emomali.jpg"
+		out.name = "lz.jpg"
 		img.save(out)
 		out.seek(0)
 		await message.client.send_file(message.to_id, out, reply_to=reply)
